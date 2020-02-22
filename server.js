@@ -14,7 +14,6 @@ const io = new SocketIO(server);
 
 Repo(async db => {
   app.use((req, res, next) => {
-    console.log("Middleware is called-We need to intercept for setting socket and db connection");
     req.io = io;
     req.db = db;
     next();
